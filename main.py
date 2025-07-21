@@ -82,13 +82,10 @@ if __name__ == "__main__":
 
         # Iterate over each trading symbol in the exchange
         for i, (trading_alias, trading_symbol) in enumerate(trading_symbols.items()):
-
+            print(trading_symbol)
             try:
                 graph = GraphConstructor(asset_type = asset_type, trading_symbol=trading_symbol, trading_exchange=exchange, symbol_alias=trading_alias).compile()
-                response = graph.invoke(input = {},config={"recursion_limit": 5})
-
-                print(response)
-
+                response = graph.invoke(input = {},config={"recursion_limit": 6})
                 # Log and handle report generation status
                 if len(response['email']) == 0:
                     logging.error(f"Analytical Report Generation for {trading_symbol} Failed. Please check Langsmith.")
@@ -97,7 +94,7 @@ if __name__ == "__main__":
                     section = response["email"].strip("`").removeprefix("html\n")
                     sections.append(section)
             except Exception as e:
-                raise e
+                continue
             finally:
                 time.sleep(30) # Sleep to avoid rate limits or API throttling
 

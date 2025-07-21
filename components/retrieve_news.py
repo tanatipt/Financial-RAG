@@ -23,13 +23,13 @@ def retrieve_news(state : State, trading_symbol: str, asset_type : str, trading_
     current_time = datetime.now(ZoneInfo('Asia/Bangkok'))
     # Retrieve news articles from various sources
     yfinance_news = retrieve_yfinance_news(current_time, trading_symbol, asset_type)
-    #tv_news = retrieve_tv_news(executed_time=current_time, trading_symbol=trading_symbol, trading_exchange=trading_exchange)
+    tv_news = retrieve_tv_news(executed_time=current_time, trading_symbol=trading_symbol, trading_exchange=trading_exchange)
 
-    news = yfinance_news #+ tv_news
+    news = yfinance_news + tv_news
 
-    #if asset_type == "stocks":
-    #    finviz_news = retrieve_finviz_news(executed_time=current_time, trading_symbol=trading_symbol)
-    #    news += finviz_news
+    if asset_type == "stocks":
+        finviz_news = retrieve_finviz_news(executed_time=current_time, trading_symbol=trading_symbol)
+        news += finviz_news
 
     # Filter out duplicate news articles based on their links
     filtered_news = filter_trading_news(news)

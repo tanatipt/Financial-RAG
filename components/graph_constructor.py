@@ -75,19 +75,25 @@ class GraphConstructor:
         
         return wrapped_node_function
     
-    def compile(self) -> StateGraph:
+    def compile(self, save_path : str = None) -> StateGraph:
         """
         Compiles the workflow graph by connecting the nodes and returning the final StateGraph object.
 
+        Args:
+            save_path (str) : The path to save an image of the workflow graph
         Returns:
             StateGraph: A StateGraph object representing the complete workflow, ready for execution.
         """
         workflow = self.connect_nodes()
         graph = workflow.compile()
 
+        if save_path is not None:
+            # Get the graph and draw it as PNG
+            png_graph = graph.get_graph().draw_mermaid_png()
+
+            # Save the PNG file
+            with open(save_path, "wb") as f:
+                f.write(png_graph)
+
         return graph
     
-
-#graph = GraphConstructor(asset_type = 'stocks', trading_symbol='NVDA', trading_exchange='NASDAQ', symbol_alias='Nvidia').compile()
-#results = graph.invoke(input = {})
-#print(graph.retrieve_news(state=obj))
