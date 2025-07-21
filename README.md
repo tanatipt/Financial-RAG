@@ -122,7 +122,7 @@ Steps to Run the RAG System:
 
 1. Create a `pyenv` virtual environment named `financial-rag` using the following command: `pyenv virtualenv 3.10.12 financial-rag`
 2. Activate the virtual environment you just created: `pyenv activate financial-rag`
-3. Install project dependencies via `Poetry`: : `poetry install`
+3. Install project dependencies via `Poetry`:  `poetry install`
 4. Create a `.env` file in the root directory of the project.
 5. Add your credentials to the `.env` file in the following format:
 ```
