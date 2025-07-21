@@ -1,14 +1,26 @@
-BINANCE: 
-  Bitcoin: BTCUSDT
-  Ethereum: ETHUSDT
-  Ripple: XRPUSDT
-  Binance Coin: BNBUSDT
-  Solana: SOLUSDT
-  Chainlink: LINKUSDT
-NASDAQ:
-  Meta: META
-  Nvidia : NVDA
-  Tesla : TSLA
-  Palantir: PLTR
-  Microsoft : MSFT
-  Alphabet (Google) : GOOGL
+default:
+  generator_model : 
+    model_name : gemini-2.5-flash
+    model_params:
+      temperature : 0.0
+      top_p : 0.0
+  critic_model : 
+    model_name : gemini-2.5-flash
+    model_params:
+      temperature : 0.0
+      top_p : 0.0
+  target_assets:
+    binance: 
+      Bitcoin: BTCUSDT
+      Ethereum: ETHUSDT
+      Ripple: XRPUSDT
+      Binance Coin: BNBUSDT
+      Solana: SOLUSDT
+      Chainlink: LINKUSDT
+    nasdaq:
+      Meta: META
+      Nvidia : NVDA
+      Tesla : TSLA
+      Palantir: PLTR
+      Microsoft : MSFT
+      Alphabet (Google) : GOOGL

@@ -1,0 +1,31 @@
+[project]
+name = "financial-rag"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "tanatip_timtong",email = "ttimt@sertiscorp.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "pydantic (>=2.11.7,<3.0.0)",
+    "langchain (>=0.3.26,<0.4.0)",
+    "langgraph (>=0.5.3,<0.6.0)",
+    "langchain-google-genai (>=2.1.8,<3.0.0)",
+    "gnews (>=0.4.1,<0.5.0)",
+    "newspaper3k (>=0.2.8,<0.3.0)",
+    "lxml[html-clean] (>=6.0.0,<7.0.0)",
+    "finvizfinance (>=1.1.1,<2.0.0)",
+    "googlenewsdecoder (>=0.1.7,<0.2.0)",
+    "yfinance (>=0.2.65,<0.3.0)",
+    "tradingview-scraper (>=0.4.8,<0.5.0)",
+    "dynaconf (>=3.2.11,<4.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "langchain-community (>=0.3.27,<0.4.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
