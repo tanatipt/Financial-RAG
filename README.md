@@ -1,4 +1,4 @@
-# Financial RAG
+# Market Sentiment Analysis
 
 In this project, we developed a self-reflective RAG with chain-of-thought to analyze a large volume of news articles from the internet and summarize the overall market sentiment for a given asset. As an investor, I’ve always relied on news to build a solid fundamental understanding of the assets I am interested in. However, due to increasing work commitments, I’ve had less time to keep up. To address this, I decided to develop a RAG system that can condense sentiment from multiple news sources into a few concise paragraphs—making it much quicker and easier for me to stay informed. These are the assets I am mainly focused on in this project:
 
